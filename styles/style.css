@@ -1,0 +1,137 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Fuente personalizada (opcional) */
+    background-color: #2c3e50; /* Fondo oscuro */
+    color: #ecf0f1; /* Color de texto claro */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #34495e;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #1abc9c; /* Cambia el color al pasar el mouse */
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.juego {
+    background-color: #34495e;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(33% - 40px); /* Aproximadamente 3 tarjetas por fila en pantallas grandes */
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s ease-in-out; /* Transición para el efecto hover */
+}
+
+.juego:hover {
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+.juego img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.juego h2 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.juego a {
+    display: inline-block;
+    background-color: #1abc9c;
+    color: #fff;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.juego a:hover {
+    background-color: #16a085; /* Cambia el color del enlace al pasar el mouse */
+}
+
+footer {
+    background-color: #34495e;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: sticky; /* Para que se quede abajo, aunque puede no ser el comportamiento deseado en todos los casos */
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .juego {
+        width: calc(50% - 20px); /* 2 tarjetas por fila en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .juego {
+        width: 100%; /* 1 tarjeta por fila en pantallas pequeñas */
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav li {
+        margin: 0.5em 0;
+    }
+}
+
+/* Animación CSS simple (opcional) */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.juego {
+    animation: aparecer 0.5s ease-out both;
+}
+
+.juego:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.juego:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.juego:nth-child(4) {
+    animation-delay: 0.6s;
+}
